@@ -1,0 +1,11 @@
+*
+
+!.gitignore
+
+!hypr/
+!noctalia/
+!solaar/
+!ideavim/
+
+!starship.toml
+!chrome-flags.conf
