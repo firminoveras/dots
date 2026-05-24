@@ -1,0 +1,78 @@
+let mapleader = " "
+" --- Opções Gerais ---
+set number relativenumber  " Números relativos para facilitar saltos
+set incsearch
+set ignorecase
+set smartcase
+set showmode
+set visualbell
+set scrolloff=5
+set clipboard+=unnamedplus " Usa o clipboard do sistema (útil no Arch)
+
+" --- Plugins ---
+set surround             " emulation do vim-surround
+set multiple-cursors     " emulation do vim-multiple-cursors
+set commentary           " habilita o 'gcc' e 'gc'
+set argtextobj           " manipula argumentos dentro de funções (cia, daa)
+set easymotion           " pulo rápido no texto
+set textobj-entire       " seleciona o arquivo todo (vae, dae)
+set highlightedyank
+
+" Define a duração do highlight (ex: 500ms)
+let g:highlightedyank_display_duration = 500
+
+" Salvar e Sair (Conforme solicitado)
+nnoremap <leader>w :w<CR>
+nnoremap <leader>q :action CloseContent<CR>
+
+" Formatar código (lsp format no Neovim -> ReformatCode no IntelliJ)
+nnoremap <leader>lf :action ReformatCode<CR>
+
+" Navegação de Tabs (Buffers)
+nnoremap [b :action PreviousTab<CR>
+nnoremap ]b :action NextTab<CR>
+nnoremap H :action PreviousTab<CR>
+nnoremap L :action NextTab<CR>
+
+" --- Navegação Android Studio / IDE ---
+" Ir para definição (gd)
+nnoremap gd :action GotoDeclaration<CR>
+" Ver usos (gr)
+nnoremap gr :action FindUsages<CR>
+" Renomear (Refactor Rename)
+nnoremap <leader>rn :action RenameElement<CR>
+" Mostrar erros e correções rápidas (tipo o diagnostic do LSP)
+nnoremap <leader>ca :action ShowIntentionActions<CR>
+
+" --- Split e Janelas ---
+nnoremap <leader>v :action SplitVertically<CR>
+nnoremap <leader>s :action SplitHorizontally<CR>
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" --- Outras Conveniências ---
+" Limpar highlight de busca
+nnoremap <ESC> :nohlsearch<CR>
+" Manter o cursor centralizado ao pular páginas
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+
+" Força o Android Studio a processar esses atalhos, não o Vim
+set handler <M-j> IDE
+set handler <M-k> IDE
+
+" No modo normal, move a linha atual
+nnoremap <M-j> :action MoveLineDown<CR>
+nnoremap <M-k> :action MoveLineUp<CR>
+
+" No modo visual, move o bloco selecionado
+vnoremap <M-j> :action MoveLineDown<CR>
+vnoremap <M-k> :action MoveLineUp<CR>
+
+" Adiciona uma vírgula no fim da linha e depois quebra em todas as vírgulas
+nnoremap <leader>lF :s/$/,/<CR>:s/, /,\r/g<CR>:action ReformatCode<CR>
+
+" Recarregar o .ideavimrc rapidamente (Leader + s + r)
+nnoremap <leader>sr :source ~/.ideavimrc<CR>

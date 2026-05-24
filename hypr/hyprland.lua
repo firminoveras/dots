@@ -1,0 +1,8 @@
+require('custom.monitor')
+require('custom.startup')
+require('custom.envs')
+require('custom.confs')
+require('custom.anims')
+require('custom.binds')
+require('custom.rules')
+require('custom.colors')
