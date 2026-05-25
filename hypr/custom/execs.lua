@@ -12,4 +12,7 @@ hl.on("hyprland.start", function()
 
   -- Noctalia
   hl.exec_cmd("noctalia")
+
+  -- Hyprpm
+  hl.exec_cmd("exec-once = sleep 1 && hyprpm reload")
 end)

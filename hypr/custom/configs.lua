@@ -7,6 +7,7 @@ hl.config({
     no_focus_fallback = true,
     allow_tearing     = true,
   },
+
   input      = {
     kb_layout = "br",
     numlock_by_default = true,
@@ -23,6 +24,7 @@ hl.config({
       scroll_factor = 0.7,
     }
   },
+
   decoration = {
     rounding_power = 2,
     rounding = 12,
@@ -91,6 +93,7 @@ hl.config({
     zoom_disable_aa = true,
     hotspot_padding = 1,
   },
+
   gestures   = {
     workspace_swipe_distance = 700,
     workspace_swipe_cancel_ratio = 0.2,
@@ -99,46 +102,8 @@ hl.config({
     workspace_swipe_direction_lock_threshold = 10,
     workspace_swipe_create_new = true,
   },
+
   animations = {
     enabled = true,
-  },
-  plugin     = {
-    hyprcapture = {
-      default_mode = "region",
-      fullscreen_scope = "all",
-      window_background = "follow-system",
-      window_border = "keep",
-      window_shadow = "keep",
-      save = true,
-      clipboard = true,
-      show_thumbnail = true,
-      allow_quick = false,
-      confirm_before_capture = false,
-      fusion_mode = false,
-      save_dir = "$XDG_PICTURES_DIR/Screenshots",
-      filename_template = "Screenshot-%Y-%m-%d-%H%M%S.png",
-      record_save_dir = "$XDG_VIDEOS_DIR/Screenrecords",
-      record_filename_template = "Recording-%Y-%m-%d-%H%M%S.mp4",
-      record_format = "mp4",
-      record_transparent_format = "webm",
-      record_fps = 60,
-      record_fps_options = "15 24 30 60",
-      record_window_fps_limit = 12,
-      record_window_real_bg_fps_limit = 8,
-      record_codec = "auto",
-      record_transparent_codec = "auto",
-      record_solid_alpha = false,
-      record_preset = "veryfast",
-      record_gsr_flags = "",
-      record_window_backend = "compositor",
-      record_max_seconds = 0,
-      record_countdown_seconds = 0,
-      include_cursor = false,
-      thumbnail_timeout_ms = 5000,
-      watermark = "",
-      watermark_position = "central",
-      watermark_width = "20%",
-      watermark_offset = "0 0",
-    },
   },
 })
