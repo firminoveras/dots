@@ -6,6 +6,7 @@
 
 !hypr/
 !hypr/**
+hypr/custom/colors.lua
 
 !noctalia/
 !noctalia/**
