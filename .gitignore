@@ -42,3 +42,15 @@ nvim/lua/plugins/colors.lua
 !yazi/
 !yazi/**
 yazi/theme.toml
+
+!noctalia/
+!noctalia/**
+
+!btop/
+!btop/**
+
+!xdg-desktop-portal/
+!xdg-desktop-portal/**
+
+!xdg-desktop-portal-termfilechooser/
+!xdg-desktop-portal-termfilechooser/**
