@@ -21,6 +21,12 @@ hl.window_rule({
   border_size = 0,
 })
 
+hl.window_rule({
+  name = "float_shadow",
+  match = { float = 1 },
+  border_size = 0,
+})
+
 hl.layer_rule({
   name = "noctalia",
   match = {

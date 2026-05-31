@@ -94,7 +94,6 @@ hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true 
 hl.bind("print", function() hl.plugin.hyprcapture.open() end)
 hl.bind("SUPER + print", function() hl.plugin.hyprcapture.open("window") end)
 
-
 hl.gesture({
   fingers = 3,
   direction = "horizontal",
