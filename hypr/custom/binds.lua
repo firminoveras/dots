@@ -74,6 +74,9 @@ hl.bind("SUPER + F", hl.dsp.exec_cmd("pkill wl-kbptr; " .. os.getenv("XDG_CONFIG
 -- Focus Mode
 hl.bind("SUPER + B", hl.dsp.exec_cmd(os.getenv("XDG_CONFIG_HOME") .. "/hypr/custom/scripts/focus-mode-toggle.sh"))
 
+-- Dynamic Island
+hl.bind("SUPER + + SHIFT + B", hl.dsp.exec_cmd(os.getenv("XDG_CONFIG_HOME") .. "/hypr/custom/scripts/enable-island.sh"))
+
 -- Laptop
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"),
   { locked = true, repeating = true })

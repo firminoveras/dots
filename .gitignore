@@ -49,6 +49,9 @@ yazi/theme.toml
 !btop/
 !btop/**
 
+!tide-island/
+!tide-island/**
+
 !xdg-desktop-portal/
 !xdg-desktop-portal/**
 
