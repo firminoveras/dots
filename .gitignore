@@ -57,3 +57,6 @@ yazi/theme.toml
 
 !xdg-desktop-portal-termfilechooser/
 !xdg-desktop-portal-termfilechooser/**
+
+!cpupower_gui/
+!cpupower_gui/**
