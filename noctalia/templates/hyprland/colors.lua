@@ -30,9 +30,6 @@ hl.config({
     glow = {
       color = primary
     },
-    shadow = {
-      color = primary,
-    }
   },
 })
 

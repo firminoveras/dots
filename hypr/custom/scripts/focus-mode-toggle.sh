@@ -8,6 +8,7 @@ if [ "$v" -eq 0 ]; then
 else
     hyprctl eval 'hl.config({general = {gaps_in = 0}})'
     hyprctl eval 'hl.config({general = {gaps_out = 0}})'
+    hyprctl eval 'hl.config({general = {border_size = 0}})'
     hyprctl eval 'hl.config({decoration = {rounding = 0}})'
     noctalia msg bar-hide
 fi

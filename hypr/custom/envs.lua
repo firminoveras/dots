@@ -1,6 +1,6 @@
 -- Theme
-hl.env("QT_QPA_PLATFORM", "wayland;xcb")
-hl.env("QT_QPA_PLATFORMTHEME", "gtk3")
+hl.env("QT_QPA_PLATFORM", "wayland")
+hl.env("QT_QPA_PLATFORMTHEME", "qt5ct")
 hl.env("XDG_MENU_PREFIX", "plasma-")
 
 -- NVidia
@@ -18,9 +18,6 @@ hl.env("XCURSOR_SIZE", "22")
 --Locals
 hl.env("XDG_DATA_DIRS",
   "/home/noctalia/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share")
-hl.env("QT_QPA_PLATFORM", " wayland;xcb")
-hl.env("QT_QPA_PLATFORMTHEME", " kde")
-hl.env("XDG_MENU_PREFIX", " plasma-")
 hl.env("XDG_CONFIG_HOME", os.getenv("HOME") .. "/.config")
 hl.env("XDG_CACHE_HOME", os.getenv("HOME") .. "/.cache")
 hl.env("XDG_DATA_HOME", os.getenv("HOME") .. "/.local/share")

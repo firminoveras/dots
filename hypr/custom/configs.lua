@@ -2,10 +2,11 @@ hl.config({
   general    = {
     gaps_in           = 4,
     gaps_out          = 6,
-    border_size       = 0,
+    border_size       = 2,
     resize_on_border  = false,
     no_focus_fallback = true,
     allow_tearing     = true,
+    layout = "dwindle",
   },
 
   input      = {
@@ -48,7 +49,7 @@ hl.config({
     shadow = {
       enabled = true,
       range = 8,
-      color_inactive = 0x99000000,
+      color = 0x50000000,
     },
 
     glow = {

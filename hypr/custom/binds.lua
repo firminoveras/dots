@@ -51,6 +51,7 @@ hl.bind("SUPER + SHIFT + mouse_down", hl.dsp.window.move({ workspace = "r-1", fo
 hl.bind("SUPER + SHIFT + mouse_up", hl.dsp.window.move({ workspace = "r+1", follow = true }))
 
 hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
+hl.bind("SUPER + mouse:274", hl.dsp.global("menu.kando.Kando:menu"), { mouse = true })
 hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 hl.bind("SUPER + Left", hl.dsp.window.resize({ x = -15, y = 0, relative = true }), { repeating = true })

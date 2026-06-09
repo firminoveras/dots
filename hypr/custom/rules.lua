@@ -29,12 +29,34 @@ hl.window_rule({
 
 hl.layer_rule({
   name = "noctalia",
-  match = {
-    namespace = "^noctalia-(bar-.+|notification|dock|panel)$",
-  },
+  match = { namespace = "^noctalia-(bar-.+|notification|dock|panel)$", },
   ignore_alpha = 0.5,
   blur = true,
   blur_popups = true,
+})
+
+
+hl.layer_rule({
+  name = "wl-kbptr",
+  match = { class = "wl-kbptr", },
+  no_anim = true,
+})
+
+hl.window_rule({
+  name = "kando",
+  match = {
+      class = "menu.kando.Kando",
+      title = "Kando Menu"
+  },
+  no_blur = true,
+  opaque = true,
+  move = {0, 0},
+  rounding = 0,
+  size = { "100%", "100%" },
+  border_size = 0,
+  no_anim = true,
+  float = true,
+  pin = true
 })
 
 hl.workspace_rule({ workspace = "1", persistent = true })
