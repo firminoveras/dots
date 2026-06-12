@@ -15,4 +15,7 @@ hl.on("hyprland.start", function()
 
   -- Hyprpm
   hl.exec_cmd("sleep 1 && hyprpm reload")
+
+  -- Kando
+  hl.exec_cmd("env QT_QPA_PLATFORM=wayland kando")
 end)
