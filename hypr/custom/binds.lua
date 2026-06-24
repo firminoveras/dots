@@ -8,6 +8,7 @@ hl.bind("SUPER + I", hl.dsp.exec_cmd("google-chrome-stable --ozone-platform-wayl
 hl.bind("SUPER + E", hl.dsp.exec_cmd("kitty -e yazi"))
 hl.bind("SUPER + N", hl.dsp.exec_cmd("kitty -e nvim"))
 hl.bind("SUPER + Z", hl.dsp.exec_cmd("nchat"))
+hl.bind("SUPER + SHIFT + C", hl.dsp.exec_cmd("hyprpicker -a"))
 
 hl.bind("SUPER + Q", hl.dsp.window.close())
 hl.bind("SUPER + W", hl.dsp.window.float())

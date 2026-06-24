@@ -20,14 +20,10 @@ require("bunny"):setup({
 		{ key = { "c", "n" }, path = "~/.config/nvim", desc = " NVim" },
 		{ key = { "c", "q" }, path = "~/.config/quickshell/ii", desc = " QuickShell" },
 		{ key = { "c", "f" }, path = "~/.config/fish", desc = " Fish" },
-		{ key = { "c", "F" }, path = "~/.config/foot", desc = " Foot" },
 		{ key = { "c", "k" }, path = "~/.config/kitty", desc = " Kitty" },
 
     -- Projects
-		{ key = {"p", "p"}, path = "~/Documentos/Projetos", desc = " Projetos" },
-		{ key = {"p", "n"}, path = "~/Documentos/Projetos/NotaFacilBravo", desc = "󰊢 NotaFacilBravo" },
-		{ key = {"p", "h"}, path = "~/Documentos/Projetos/HINEDigital/app/src/main", desc = "󰊢 HINEDigital" },
-		{ key = {"p", "f"}, path = "~/Documentos/Projetos/FitoMente/app/src/main", desc = "󰊢 FITOMente" },
+		{ key = "p", path = "~/Documentos/Projetos", desc = " Projetos" },
 	},
 	desc_strategy = "path",
 	ephemeral = false,

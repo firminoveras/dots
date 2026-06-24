@@ -19,6 +19,11 @@ run = 'tab_create --current'
 desc = "New Tab"
 
 [[mgr.prepend_keymap]]
+on = "d"
+run = 'remove --permanently'
+desc = "Delete"
+
+[[mgr.prepend_keymap]]
 on = "<A-Enter>"
 run = 'open --interactive'
 desc = "Open interactive"

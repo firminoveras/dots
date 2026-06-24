@@ -14,11 +14,30 @@ sort_by = "natural"
 sort_dir_first = true
 show_hidden = true
 
-
 [opener]
-edit = [{ run = 'nvim "$@"', block = true, for = "unix" }]
-open = [{ run = 'xdg-open "$@"', desc = "Open" }]
-play = [{ run = 'vlc "$@"', orphan = true, for = "unix" }]
-pinta = [{ run = 'pinta "$@"', detach = true, desc = "Editar com Pinta" }]
-extract = [{ run = '7z x "$@"', block = true, desc = "Extrair aqui" }]
+edit    = [ { run = 'nvim "$@"', block = true, for = "unix" } ]
+open    = [ { run = 'xdg-open "$@"', desc = "Abrir com app padrão" } ]
+play    = [ { run = 'vlc "$@"', orphan = true, for = "unix" } ]
+pinta   = [ { run = 'pinta "$@"', orphan = true, desc = "Editar com Pinta" } ]
+extract = [ { run = '7z x "$@"', block = true, desc = "Extrair aqui" } ]
+zip     = [ { run = 'for dir in "$@"; do if [ -d "$dir" ]; then (cd "$(dirname "$dir")" && zip -r "$(basename "$dir")".zip "$(basename "$dir")"); fi; done', block = true, desc = "Zipar com 7z" } ]
 
+[open]
+rules = [
+	{ url = "*/", use = [ "edit", "open", "zip" ] },
+
+	{ mime = "text/*",  use = [ "edit", "open" ] },
+	{ mime = "image/*", use = [ "open", "pinta" ] },
+	{ mime = "video/*", use = [ "play", "open" ] },
+	{ mime = "audio/*", use = [ "play", "open" ] },
+	{ mime = "application/pdf", use = [ "open" ] },
+	
+	{ mime = "application/zip", use = [ "extract" ] },
+	{ mime = "application/x-tar", use = [ "extract" ] },
+	{ mime = "application/x-bzip2", use = [ "extract" ] },
+	{ mime = "application/x-gzip", use = [ "extract" ] },
+	{ mime = "application/x-7z-compressed", use = [ "extract" ] },
+	{ mime = "application/x-rar", use = [ "extract" ] },
+
+	{ url = "*", use = [ "edit", "open" ] }
+]
