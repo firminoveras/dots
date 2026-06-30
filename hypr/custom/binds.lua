@@ -1,6 +1,7 @@
 hl.bind("SUPER + CTRL + T", hl.dsp.exec_cmd("noctalia msg panel-toggle wallpaper"))
 hl.bind("SUPER + Escape", hl.dsp.exec_cmd("noctalia msg panel-toggle launcher"))
 hl.bind("CTRL + ALT + Delete", hl.dsp.exec_cmd("noctalia msg panel-toggle session"))
+hl.bind("ALT + F4", hl.dsp.exec_cmd("noctalia msg panel-toggle session"))
 hl.bind("SUPER + V", hl.dsp.exec_cmd("noctalia msg panel-toggle clipboard"))
 
 hl.bind("SUPER + T", hl.dsp.exec_cmd("kitty"))
@@ -54,6 +55,7 @@ hl.bind("SUPER + SHIFT + mouse_up", hl.dsp.window.move({ workspace = "r+1", foll
 hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind("SUPER + mouse:274", hl.dsp.global("menu.kando.Kando:menu"), { mouse = true })
 hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
+hl.bind("CTRL + Space", hl.dsp.global("menu.kando.Kando:menu"))
 
 hl.bind("SUPER + Left", hl.dsp.window.resize({ x = -15, y = 0, relative = true }), { repeating = true })
 hl.bind("SUPER + Right", hl.dsp.window.resize({ x = 15, y = 0, relative = true }), { repeating = true })
