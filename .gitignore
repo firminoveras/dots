@@ -60,3 +60,7 @@ yazi/theme.toml
 
 !cpupower_gui/
 !cpupower_gui/**
+
+!sddm-theme/
+!sddm-theme/**
+sddm-theme/theme.conf

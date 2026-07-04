@@ -144,3 +144,18 @@ desc = "Next Tab"
 on = "J"
 run = "tab_switch -1 --relative"
 desc = "Previous Tab"
+
+[[mgr.prepend_keymap]]
+on = [ "M", "m" ]
+run = "plugin gvfs -- select-then-mount --jump"
+desc = "Select device then mount"
+
+[[mgr.prepend_keymap]]
+on = [ "M", "u" ]
+run = "plugin gvfs -- select-then-unmount"
+desc = "Select device then unmount"
+
+[[mgr.prepend_keymap]]
+on = [ "M", "l" ]
+run = "plugin gvfs -- jump-to-device"
+desc = "Jump to device"
