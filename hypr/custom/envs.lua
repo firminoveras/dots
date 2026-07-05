@@ -16,8 +16,7 @@ hl.env("HYPRCURSOR_SIZE", "22")
 hl.env("XCURSOR_SIZE", "22")
 
 --Locals
-hl.env("XDG_DATA_DIRS",
-  "/home/noctalia/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share")
+hl.env("XDG_DATA_DIRS", os.getenv("HOME") .. "/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share")
 hl.env("XDG_CONFIG_HOME", os.getenv("HOME") .. "/.config")
 hl.env("XDG_CACHE_HOME", os.getenv("HOME") .. "/.cache")
 hl.env("XDG_DATA_HOME", os.getenv("HOME") .. "/.local/share")
