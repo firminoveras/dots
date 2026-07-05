@@ -11,7 +11,7 @@
     headset-signature-passive, logivoice-nr-state, logivoice-ng-state, logivoice-comp-state, logivoice-deesser-state, logivoice-depopper-state, logivoice-limiter-state,
     logivoice-hpf-state]
   _battery: 4100
-  _config_cookie: [61, 81]
+  _config_cookie: [237, 70]
   _modelId: B02A00000000
   _sensitive: {divert-keys: true, dpi: true, lowres-scroll-mode: true, reprogrammable-keys: true}
   _serial: D3A854E7
@@ -33,7 +33,7 @@
     headset-signature-passive, logivoice-nr-state, logivoice-ng-state, logivoice-comp-state, logivoice-deesser-state, logivoice-depopper-state, logivoice-limiter-state,
     logivoice-hpf-state, reprogrammable-keys]
   _battery: 4100
-  _config_cookie: [136, 2]
+  _config_cookie: [237, 69]
   _modelId: B37700000000
   _sensitive: {hires-scroll-mode: ignore, hires-smooth-invert: ignore, hires-smooth-resolution: ignore}
   _serial: 740496E1

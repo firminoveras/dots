@@ -1,5 +1,7 @@
 hl.bind("SUPER + CTRL + T", hl.dsp.exec_cmd("noctalia msg panel-toggle wallpaper"))
 hl.bind("SUPER + Escape", hl.dsp.exec_cmd("noctalia msg panel-toggle launcher"))
+hl.bind("XF86Search", hl.dsp.exec_cmd("noctalia msg panel-toggle launcher"))
+hl.bind("SHIFT + CTRL + ALT + SUPER + SPACE", hl.dsp.exec_cmd("noctalia msg panel-toggle launcher /emo"))
 hl.bind("CTRL + ALT + Delete", hl.dsp.exec_cmd("noctalia msg panel-toggle session"))
 hl.bind("ALT + F4", hl.dsp.exec_cmd("noctalia msg panel-toggle session"))
 hl.bind("SUPER + V", hl.dsp.exec_cmd("noctalia msg panel-toggle clipboard"))
@@ -14,9 +16,11 @@ hl.bind("SUPER + SHIFT + C", hl.dsp.exec_cmd("hyprpicker -a"))
 hl.bind("SUPER + Q", hl.dsp.window.close())
 hl.bind("SUPER + W", hl.dsp.window.float())
 hl.bind("SUPER + P", hl.dsp.window.pin())
+hl.bind("SUPER + O", hl.dsp.layout("togglesplit"))
+
 hl.bind("SUPER + Return", hl.dsp.window.fullscreen())
 hl.bind("SUPER + ALT + Return", hl.dsp.window.fullscreen_state({ internal = -1, client = 2 }))
-hl.bind("SUPER + O", hl.dsp.layout("togglesplit"))
+hl.bind("SUPER + D", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }))
 
 hl.bind("SUPER + G", hl.dsp.group.toggle())
 hl.bind("SUPER + ALT + H", hl.dsp.group.move_window({ direction = "l" }))
@@ -55,7 +59,6 @@ hl.bind("SUPER + SHIFT + mouse_up", hl.dsp.window.move({ workspace = "r+1", foll
 hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind("SUPER + mouse:274", hl.dsp.global("menu.kando.Kando:menu"), { mouse = true })
 hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
-hl.bind("CTRL + Space", hl.dsp.global("menu.kando.Kando:menu"))
 
 hl.bind("SUPER + Left", hl.dsp.window.resize({ x = -15, y = 0, relative = true }), { repeating = true })
 hl.bind("SUPER + Right", hl.dsp.window.resize({ x = 15, y = 0, relative = true }), { repeating = true })
