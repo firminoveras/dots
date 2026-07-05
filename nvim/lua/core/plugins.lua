@@ -10,7 +10,6 @@ local plugins = {
 
   -- Tema / cores / notificações
   { 'RRethy/base16-nvim',                       name = 'base16' },
-  { 'rcarriga/nvim-notify',                     name = 'notify' },
   { 'folke/which-key.nvim',                     name = 'which-key' },
 
   -- Statusline / bufferline / pequenas UIs visuais
@@ -20,9 +19,8 @@ local plugins = {
   { 'nvim-neo-tree/neo-tree.nvim',              name = 'neo-tree' },
   { 'petertriho/nvim-scrollbar',                name = 'scrollbar' },
   { 'luukvbaal/statuscol.nvim',                 name = 'statuscol' },
-  { 'nvimdev/dashboard-nvim',                   name = 'dashboard' },
+  { 'folke/snacks.nvim',                        name = 'snacks' },
   { 'amansingh-afk/milli.nvim',                 name = 'milli' },
-
 
   -- Complementos de completion/UX no cmdline
   { 'hrsh7th/cmp-cmdline',                      name = 'cmp-cmdline' },
@@ -41,7 +39,6 @@ local plugins = {
 
   -- Treesitter (sintaxe/indent/highlight) + related
   { 'nvim-treesitter/nvim-treesitter',          name = 'nvim-treesitter' },
-  { 'lukas-reineke/indent-blankline.nvim',      name = 'blankline' },
 
   -- Completion / snippets
   { 'L3MON4D3/LuaSnip',                         name = 'luasnip' },

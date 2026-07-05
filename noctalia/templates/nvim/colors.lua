@@ -11,12 +11,12 @@ base16.setup {
   base06 = "{{colors.on_surface.default.hex}}", -- FG Light (Destaque de texto)
   base07 = "{{colors.on_background.default.hex | lighten: 5}}", -- FG Lighter (Quase branco/rosa muito claro)
 
-  base08 = "{{colors.terminal_normal_white.default.hex}}", -- WHITE Variables
+  base08 = "{{colors.terminal_bright_white.default.hex}}", -- WHITE Variables
   base09 = "{{colors.terminal_normal_red.default.hex}}", -- RED Constants, Int, Bool, Numbers
   base0A = "{{colors.terminal_normal_yellow.default.hex}}", -- YELLOW Classes, Object Primitives, Search BG
   base0B = "{{colors.terminal_normal_green.default.hex}}", -- GREEN Strings
   base0C = "{{colors.terminal_normal_cyan.default.hex}}", -- CYAN Support Chars, Regular Expressions, Escape Char
   base0D = "{{colors.terminal_normal_blue.default.hex}}", -- BLUE Dinamic Keywords, (Functions, MEthods)
   base0E = "{{colors.terminal_normal_magenta.default.hex}}", -- MAGENTA Static Keywords, ? : if else for
-  base0F = "{{colors.terminal_normal_black.default.hex}}", -- GRAY Deprecated, Symbols , . :
+  base0F = "{{colors.outline.default.hex | lighten: 5}}", -- GRAY Deprecated, Symbols , . :
 }

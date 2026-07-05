@@ -6,11 +6,13 @@ hl.config({
     resize_on_border  = false,
     no_focus_fallback = true,
     allow_tearing     = true,
-    layout = "dwindle",
+    layout            = "dwindle",
   },
 
   input      = {
     kb_layout = "br",
+    -- kb_layout = "us",
+    -- kb_variant = "altgr-intl",
     numlock_by_default = true,
     repeat_delay = 250,
     repeat_rate = 50,
