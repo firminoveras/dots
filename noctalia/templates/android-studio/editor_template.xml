@@ -1,0 +1,61 @@
+<scheme name="Matugen Dynamic Editor" version="142" parent_scheme="Darcula">
+  <metaInfo>
+    <property name="created">2026-07-06</property>
+  </metaInfo>
+  <colors>
+    <option name="GUTTER_BACKGROUND" value="{{colors.surface.default.hex}}" />
+    <option name="NOTIFICATION_BACKGROUND" value="{{colors.surface_container_high.default.hex}}" />
+    <option name="CARET_ROW_COLOR" value="{{colors.surface_container_low.default.hex}}" />
+    <option name="LINE_NUMBERS_COLOR" value="{{colors.outline.default.hex}}" />
+    <option name="LINE_NUMBER_ON_CARET_ROW_COLOR" value="{{colors.primary.default.hex}}" />
+    <option name="SELECTION_BACKGROUND" value="{{colors.primary_container.default.hex}}" />
+    <option name="SELECTION_FOREGROUND" value="{{colors.on_primary_container.default.hex}}" />
+    <option name="CONSOLE_BACKGROUND_KEY" value="{{colors.surface_container_lowest.default.hex}}" />
+  </colors>
+  <attributes>
+    <option name="TEXT">
+      <value>
+        <option name="FOREGROUND" value="{{colors.on_surface.default.hex}}" />
+        <option name="BACKGROUND" value="{{colors.surface.default.hex}}" />
+      </value>
+    </option>
+    <option name="DEFAULT_KEYWORD">
+      <value>
+        <option name="FOREGROUND" value="{{colors.primary.default.hex}}" />
+        <option name="FONT_TYPE" value="1" />
+      </value>
+    </option>
+    <option name="DEFAULT_STRING">
+      <value>
+        <option name="FOREGROUND" value="{{colors.tertiary.default.hex}}" />
+      </value>
+    </option>
+    <option name="DEFAULT_NUMBER">
+      <value>
+        <option name="FOREGROUND" value="{{colors.secondary.default.hex}}" />
+      </value>
+    </option>
+    <option name="DEFAULT_FUNCTION_DECLARATION">
+      <value>
+        <option name="FOREGROUND" value="{{colors.secondary.default.hex}}" />
+      </value>
+    </option>
+    <option name="DEFAULT_FUNCTION_CALL">
+      <value>
+        <option name="FOREGROUND" value="{{colors.secondary.default.hex}}" />
+      </value>
+    </option>
+    <option name="DEFAULT_BLOCK_COMMENT">
+      <value>
+        <option name="FOREGROUND" value="{{colors.outline.default.hex}}" />
+        <option name="FONT_TYPE" value="2" />
+      </value>
+    </option>
+    <option name="DEFAULT_LINE_COMMENT">
+      <value>
+        <option name="FOREGROUND" value="{{colors.outline.default.hex}}" />
+        <option name="FONT_TYPE" value="2" />
+      </value>
+    </option>
+  </attributes>
+</scheme>

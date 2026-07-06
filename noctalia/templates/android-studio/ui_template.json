@@ -1,0 +1,71 @@
+{
+  "name": "Matugen Dynamic",
+  "dark": true,
+  "author": "Matugen",
+  "parentTheme": "Islands Dark",
+  "editorScheme": "/matugen.xml",
+  "ui": {
+    "*": {
+      "background": "{{colors.surface.default.hex}}",
+      "foreground": "{{colors.on_surface.default.hex}}",
+      "selectionBackground": "{{colors.primary_container.default.hex}}",
+      "selectionForeground": "{{colors.on_primary_container.default.hex}}",
+      "separatorColor": "{{colors.outline_variant.default.hex}}",
+      "focusColor": "{{colors.primary.default.hex}}",
+      "focusedBorderColor": "{{colors.primary.default.hex}}"
+    },
+    "MainWindow.background": "{{colors.surface_container_lowest.default.hex}}",
+    "Island.borderColor": "{{colors.surface_container_low.default.hex}}",
+    "ToolWindow.background": "{{colors.surface_container_low.default.hex}}",
+    "ToolWindow.Header.background": "{{colors.surface_container.default.hex}}",
+    "ToolWindow.Header.inactiveBackground": "{{colors.surface_container_low.default.hex}}",
+    "ToolWindow.Content.background": "{{colors.surface_container_low.default.hex}}",
+    "Panel.background": "{{colors.surface.default.hex}}",
+    "Component": {
+      "focusColor": "{{colors.primary.default.hex}}",
+      "focusedBorderColor": "{{colors.primary.default.hex}}"
+    },
+    "TextField": {
+      "background": "{{colors.surface_container_lowest.default.hex}}",
+      "foreground": "{{colors.on_surface.default.hex}}",
+      "caretForeground": "{{colors.primary.default.hex}}"
+    },
+    "Tree": {
+      "background": "{{colors.surface.default.hex}}",
+      "foreground": "{{colors.on_surface.default.hex}}",
+      "selectionBackground": "{{colors.primary_container.default.hex}}",
+      "selectionForeground": "{{colors.on_primary_container.default.hex}}",
+      "selectionInactiveBackground": "{{colors.surface_container_highest.default.hex}}"
+    },
+    "List": {
+      "background": "{{colors.surface.default.hex}}",
+      "foreground": "{{colors.on_surface.default.hex}}",
+      "selectionBackground": "{{colors.primary_container.default.hex}}",
+      "selectionForeground": "{{colors.on_primary_container.default.hex}}"
+    },
+    "EditorTabs": {
+      "background": "{{colors.surface.default.hex}}",
+      "activeBackground": "{{colors.surface.default.hex}}",
+      "inactiveBackground": "{{colors.surface_container_low.default.hex}}",
+      "underlineColor": "{{colors.primary.default.hex}}",
+      "underlineHeight": 2
+    },
+    "StatusBar": {
+      "background": "{{colors.surface_container_low.default.hex}}",
+      "foreground": "{{colors.on_surface_variant.default.hex}}",
+      "borderColor": "#00000000"
+    },
+    "NavBar": {
+      "background": "{{colors.surface_container.default.hex}}"
+    },
+    "Popup": {
+      "background": "{{colors.surface_container_high.default.hex}}"
+    },
+    "SearchEverywhere": {
+      "background": "{{colors.surface_container_high.default.hex}}",
+      "SearchField": {
+        "background": "{{colors.surface_container_lowest.default.hex}}"
+      }
+    }
+  }
+}

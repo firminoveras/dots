@@ -20,6 +20,8 @@ hypr/custom/colors.lua
 !fish/
 fish/*
 !fish/config.fish
+!fish/functions
+!fish/functions/**
 
 !inkscape/
 inkscape/*
@@ -64,3 +66,4 @@ yazi/theme.toml
 !sddm-theme/
 !sddm-theme/**
 sddm-theme/theme.conf
+sddm-theme/assets/background.jpg

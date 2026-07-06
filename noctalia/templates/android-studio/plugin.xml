@@ -1,0 +1,13 @@
+<idea-plugin>
+    <id>me.firmino.matugen.theme</id>
+    <name>Matugen Dynamic Theme</name>
+    <version>1.0.0</version>
+    <vendor>Matugen</vendor>
+    <description>Tema dinâmico gerado via Matugen a partir do wallpaper.</description>
+    
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <themeProvider id="me.firmino.matugen" path="/matugen.theme.json"/>
+    </extensions>
+</idea-plugin>
