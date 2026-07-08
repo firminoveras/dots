@@ -118,13 +118,14 @@
          id="rect"
          style="fill:blue;"
          usecurrent="1"
-         width="377.929975855051"
-         height="323.351570189473"
+         width="54.0152482160408"
+         height="344.157974363311"
          ry="0" />
       <eventcontext
          id="3dbox"
          style="stroke:none;stroke-linejoin:round;"
-         usecurrent="1">
+         usecurrent="1"
+         persp="perspective9">
         <side
            id="XYfront"
            style="fill:#8686bf;stroke:none;stroke-linejoin:round;"
@@ -397,7 +398,8 @@
        selcue="1"
        gradientdrag="0"
        changelayer="1"
-       changepage="1" />
+       changepage="1"
+       lock_aspect_ratio="1" />
     <eventcontext
        id="connector"
        style="fill:none;fill-rule:evenodd;stroke:black;stroke-opacity:1;stroke-linejoin:miter;stroke-width:1px;stroke-linecap:butt;"
@@ -585,7 +587,7 @@
        id="toolbox" />
     <group
        id="fillstroke"
-       page="1" />
+       page="2" />
     <group
        id="filtereffects" />
     <group
@@ -995,7 +997,7 @@
        id="ruler" />
     <group
        id="snapping"
-       snap-global-toggle="0" />
+       snap-global-toggle="1" />
   </group>
   <group
      id="extensions"
@@ -1008,10 +1010,10 @@
      org.inkscape.effect.filter.ColorDropShadow.blur="5.25533536585366" />
   <group
      id="desktop"
-     style="fill:#3e78a6;text-orientation:auto;stroke-width:37.79527559;stroke-linecap:round;paint-order:stroke fill markers">
+     style="fill:none;text-orientation:auto;stroke-width:0.37795276;stroke-linecap:round;paint-order:stroke fill markers;stroke:#000000">
     <group
-       width="1266"
-       height="1030"
+       width="1908"
+       height="1034"
        x="0"
        y="0"
        maximized="1"
