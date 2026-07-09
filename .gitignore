@@ -13,6 +13,7 @@ hypr/custom/colors.lua
 
 !solaar/
 !solaar/**
+solaar/config.yaml
 
 !ideavim/
 !ideavim/**
@@ -22,10 +23,6 @@ fish/*
 !fish/config.fish
 !fish/functions
 !fish/functions/**
-
-!inkscape/
-inkscape/*
-!inkscape/preferences.xml
 
 !/kitty/
 kitty/*
@@ -67,3 +64,4 @@ yazi/theme.toml
 !sddm-theme/**
 sddm-theme/theme.conf
 sddm-theme/assets/background.jpg
+sddm-theme/assets/avatar.jpg

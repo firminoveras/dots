@@ -30,6 +30,10 @@ active = { fg = "{{colors.surface_variant.default.hex}}", bg = "{{colors.seconda
 sep_inner = { open = "", close = "" }
 sep_outer = { open = "", close = "" }
 
+[indicator]
+preview = { bg = "{{colors.secondary_container.default.hex}}", fg =  "{{colors.on_secondary_container.default.hex}}"}
+parent = { bg = "{{colors.secondary_container.default.hex}}", fg =  "{{colors.on_secondary_container.default.hex}}"}
+
 [mode]
 # Normal mode
 normal_main = { fg = "{{colors.surface_variant.default.hex}}", bg = "{{colors.secondary.default.hex}}" }
@@ -116,7 +120,7 @@ footer = { fg = "{{colors.on_surface.default.hex}}", bg = "{{colors.secondary.de
 
 [filetype]
 rules = [
-  { mime = "image/*", fg = "{{colors.error_container.default.hex}}" },
+  { mime = "image/*", fg = "{{colors.primary_container.default.hex}}" },
   { mime = "video/*", fg = "{{colors.secondary_container.default.hex}}" },
   { mime = "audio/*", fg = "{{colors.tertiary_container.default.hex}}" },
   { mime = "*", is = "orphan", fg = "{{colors.surface_container_highest.default.hex}}", crossed = true },

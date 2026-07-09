@@ -8,10 +8,7 @@ require("bunny"):setup({
 		{ key = "w", path = "~/Imagens/Wallpapers", desc = "󰋩 Wallpapers" },
 		{ key = "a", path = "/usr/share/applications", desc = " Apps" },
 		{ key = "d", path = "~/Downloads", desc = "󰉍 Downloads" },
-
-    -- Dots
-		{ key = "r", path = "~/Documentos/Repositorios/dots-hyprland", desc = "󱞞 Hyprland Dots" },
-    { key = ".", path = "~/Documentos/Repositorios/dots-hyprland/dots/.config/", desc = "󱞞 Dots" },
+    { key = "p", path = "~/Documentos/Projetos", desc = " Projetos" },
 
     -- Configs
 		{ key = { "c", "c" }, path = "~/.config", desc = " Config" },
@@ -21,9 +18,7 @@ require("bunny"):setup({
 		{ key = { "c", "q" }, path = "~/.config/quickshell/ii", desc = " QuickShell" },
 		{ key = { "c", "f" }, path = "~/.config/fish", desc = " Fish" },
 		{ key = { "c", "k" }, path = "~/.config/kitty", desc = " Kitty" },
-
-    -- Projects
-		{ key = "p", path = "~/Documentos/Projetos", desc = " Projetos" },
+		{ key = { "c", "m" }, path = "~/.config/noctalia/templates", desc = " Matugen" },
 	},
 	desc_strategy = "path",
 	ephemeral = false,
