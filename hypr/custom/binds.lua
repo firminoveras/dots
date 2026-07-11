@@ -13,6 +13,7 @@ hl.bind("SUPER + E", hl.dsp.exec_cmd("kitty -e yazi"))
 hl.bind("SUPER + N", hl.dsp.exec_cmd("kitty -e nvim"))
 hl.bind("SUPER + Z", hl.dsp.exec_cmd("nchat"))
 hl.bind("SUPER + SHIFT + C", hl.dsp.exec_cmd("hyprpicker -a"))
+hl.bind("SUPER + SHIFT + B", hl.dsp.exec_cmd("kitty -e btop"))
 
 hl.bind("SUPER + Q", hl.dsp.window.close())
 hl.bind("SUPER + W", hl.dsp.window.float())
@@ -76,16 +77,10 @@ hl.bind("SUPER + L", hl.dsp.focus({ direction = "r" }))
 hl.bind("SUPER + K", hl.dsp.focus({ direction = "u" }))
 hl.bind("SUPER + J", hl.dsp.focus({ direction = "d" }))
 
--- WL-KBPTR
 hl.bind("SUPER + F", hl.dsp.exec_cmd("pkill wl-kbptr; " .. os.getenv("XDG_CONFIG_HOME") .. "/hypr/custom/scripts/wl-kbptr-bind.sh -f"))
 
--- Focus Mode
 hl.bind("SUPER + B", hl.dsp.exec_cmd(os.getenv("XDG_CONFIG_HOME") .. "/hypr/custom/scripts/focus-mode-toggle.sh"))
 
--- Dynamic Island
-hl.bind("SUPER + + SHIFT + B", hl.dsp.exec_cmd(os.getenv("XDG_CONFIG_HOME") .. "/hypr/custom/scripts/enable-island.sh"))
-
--- Laptop
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"),
   { locked = true, repeating = true })
 hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),
@@ -101,7 +96,6 @@ hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = tr
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
 
--- Print
 hl.bind("print", function() hl.plugin.hyprcapture.open() end)
 hl.bind("SUPER + print", function() hl.plugin.hyprcapture.open("window") end)
 
