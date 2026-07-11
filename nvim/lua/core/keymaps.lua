@@ -59,6 +59,7 @@ map('n', '\\', function() vim.cmd((vim.api.nvim_win_get_width(0) < vim.o.columns
 -- NeoTree
 map('n', '<leader>e', '', ' NeoTree')
 map('n', '<M-e>', ':Neotree filesystem toggle<CR>')
+map('n', '<M-1>', ':Neotree filesystem toggle<CR>')
 map('n', '<leader>ee', ':Neotree filesystem toggle<CR>', ' Toggle')
 map('n', '<leader>et', ':Neotree filesystem reveal<CR>', ' Current file')
 map('n', '<leader>eb', ':Neotree buffers toggle<CR>', '󱦞 Buffers')

@@ -30,13 +30,15 @@ snacks.setup {
 ⠀⠀⠀⠀⣀⣤⣶⡿⠛⢁⠀⠀⠀⠀⠀⠀⠀⡌⠛⠿⣿⣦⣄⡀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠘⢿⣤⣘⣷⠶⠚⠛⠻⢶⣭⣁⣴⠖⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠞⣼⣿⣾⣿⣞⠖⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠈⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-]],
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠈⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ]],
     },
     formats = {
       icon = function(item)
         if item.file and item.icon == "file" or item.icon == "directory" then
-          return Snacks.dashboard.icon(item.file, item.icon)
+          return {
+            Snacks.dashboard.icon(item.file, item.icon),
+            { " " .. item.key, hl = "key" }
+          }
         end
         return { item.icon, width = 2, hl = "icon" }
       end,
@@ -56,12 +58,7 @@ snacks.setup {
         local dir, file = fname:match("^(.*)/(.+)$")
         return dir and { { dir .. "/", hl = "dir" }, { file, hl = "file" } } or { { fname, hl = "file" } }
       end,
-      key = function(item)
-        if item.file and item.icon == "file" or item.icon == "directory" then
-          return { { "[", hl = "special" }, { item.key, hl = "key" }, { "]", hl = "special" } }
-        end
-        return { "" }
-      end,
+      key = { "" },
       desc = function(item)
         return { { item.desc:sub(1, 1), hl = "key" }, { item.desc:sub(2) } }
       end,
