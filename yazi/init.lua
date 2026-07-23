@@ -9,6 +9,7 @@ require("bunny"):setup({
 		{ key = "a", path = "/usr/share/applications", desc = " Apps" },
 		{ key = "d", path = "~/Downloads", desc = "󰉍 Downloads" },
     { key = "p", path = "~/Documentos/Projetos", desc = " Projetos" },
+    { key = "l", path = "~/.local", desc = " Local" },
 
     -- Configs
 		{ key = { "c", "c" }, path = "~/.config", desc = " Config" },
