@@ -55,8 +55,8 @@ hl.bind("SUPER + SHIFT + 8", hl.dsp.window.move({ workspace = 8, follow = true }
 hl.bind("SUPER + SHIFT + 9", hl.dsp.window.move({ workspace = 9, follow = true }))
 hl.bind("SUPER + SHIFT + 0", hl.dsp.window.move({ workspace = 0, follow = true }))
 
-hl.bind("SUPER + SHIFT + mouse_down", hl.dsp.window.move({ workspace = "r-1", follow = true }))
-hl.bind("SUPER + SHIFT + mouse_up", hl.dsp.window.move({ workspace = "r+1", follow = true }))
+hl.bind("SUPER + SHIFT + mouse_down", hl.dsp.window.move({ workspace = "r+1", follow = true }))
+hl.bind("SUPER + SHIFT + mouse_up", hl.dsp.window.move({ workspace = "r-1", follow = true }))
 
 hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind("SUPER + mouse:274", hl.dsp.global("menu.kando.Kando:menu"), { mouse = true })
