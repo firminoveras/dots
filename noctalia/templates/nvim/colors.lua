@@ -4,7 +4,7 @@ if not ok then return end
 base16.setup {
   base00 = "{{colors.background.default.hex}}", -- BG (Fundo principal)
   base01 = "{{colors.surface_container_low.default.hex}}", -- BG Light (Linha atual/Highlight)
-  base02 = "{{colors.surface_container_highest.default.hex}}", -- BG Selection (Destaque visual)
+  base02 = "{{colors.surface_container_highest.default.hex | darken: 5}}", -- BG Selection (Destaque visual)
   base03 = "{{colors.surface_bright.default.hex}}", -- Comments (Cinza médio, muito mais legível)
   base04 = "{{colors.outline.default.hex}}", -- FG Dark (Status Bars, Números)
   base05 = "{{colors.on_surface_variant.default.hex}}", -- FG (Texto principal, Operadores)

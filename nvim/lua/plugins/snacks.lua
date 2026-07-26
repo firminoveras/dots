@@ -2,15 +2,79 @@ local ok, snacks = pcall(require, 'snacks')
 if not ok then return end
 
 snacks.setup {
+  picker = {
+    live = true,
+    exclude = {
+      ".cache",
+      "node_modules",
+      ".cargo",
+      ".gnupg",
+      ".java",
+      ".javacpp",
+      ".npm",
+    },
+    layout = { preset = "left" }
+  },
+
   dashboard = {
     enabled = true,
     autokeys = "1234567890",
     preset = {
       keys = {
         { icon = " ", key = "n", desc = "New", action = ":ene | startinsert" },
-        { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
-        { icon = " ", key = "w", desc = "Find Word", action = ":lua Snacks.dashboard.pick('live_grep')" },
-        { icon = " ", key = "c", desc = "Configs", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
+        {
+          icon = " ",
+          key = "f",
+          desc = "Find File",
+          action = function()
+            Snacks.dashboard.pick("files", {
+              cwd = vim.fn.expand("~"),
+              live = true,
+              debounce = 10,
+              hidden = true,
+              ignored = true,
+            })
+          end,
+        },
+        {
+          icon = " ",
+          key = "r",
+          desc = "Recent Files",
+          action = function()
+            Snacks.dashboard.pick("oldfiles", {
+              cwd = vim.fn.expand("~"),
+              live = true,
+              debounce = 10,
+              hidden = true,
+            })
+          end,
+        },
+        {
+          icon = " ",
+          key = "w",
+          desc = "Word Finder",
+          action = function()
+            Snacks.dashboard.pick("live_grep", {
+              cwd = vim.fn.expand("~"),
+              live = true,
+              debounce = 10,
+              hidden = true,
+            })
+          end,
+        },
+        {
+          icon = " ",
+          key = "c",
+          desc = "Configs",
+          action = function()
+            Snacks.dashboard.pick("files", {
+              cwd = vim.fn.stdpath("config"),
+              live = true,
+              debounce = 10,
+              hidden = true,
+            })
+          end,
+        },
         { icon = " ", key = "q", desc = "Quit", action = ":qa" },
       },
       header = [[
@@ -77,5 +141,4 @@ snacks.setup {
   notifier = {
     enabled = true,
   }
-
 }
