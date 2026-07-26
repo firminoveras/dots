@@ -33,6 +33,9 @@ hl.bind("SUPER + ALT + J", hl.dsp.group.move_window({ direction = "d" }))
 hl.bind("SUPER + S", hl.dsp.workspace.toggle_special())
 hl.bind("SUPER + SHIFT + S", hl.dsp.window.move({ workspace = "special", follow = true }))
 
+hl.bind("SUPER + mouse_down", hl.dsp.focus({ workspace = "r+1" }))
+hl.bind("SUPER + mouse_up", hl.dsp.focus({ workspace = "r-1" }))
+
 hl.bind("SUPER + 1", hl.dsp.focus({ workspace = 1 }))
 hl.bind("SUPER + 2", hl.dsp.focus({ workspace = 2 }))
 hl.bind("SUPER + 3", hl.dsp.focus({ workspace = 3 }))
