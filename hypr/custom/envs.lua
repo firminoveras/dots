@@ -20,8 +20,12 @@ hl.env("XDG_DATA_DIRS", os.getenv("HOME") .. "/.local/share/flatpak/exports/shar
 hl.env("XDG_CONFIG_HOME", os.getenv("HOME") .. "/.config")
 hl.env("XDG_CACHE_HOME", os.getenv("HOME") .. "/.cache")
 hl.env("XDG_DATA_HOME", os.getenv("HOME") .. "/.local/share")
-hl.env("CUDA_CACHE_PATH", os.getenv("HOME") .. "/.cache/nv")
+
 hl.env("ANDROID_USER_HOME", os.getenv("HOME") .. "/.config/android_user")
+hl.env("JAVA_TOOL_OPTIONS", "-Djava.util.prefs.userRoot=" .. os.getenv("XDG_CONFIG_HOME") .. "/java")
+hl.env("CARGO_HOME", os.getenv("XDG_CONFIG_HOME") .. "/cargo")
+hl.env("CUDA_CACHE_PATH", os.getenv("HOME") .. "/.cache/nv")
+hl.env("GTK2_RC_FILES", os.getenv("HOME") .. "/.config/gtk-2.0/gtkrc")
 hl.env("DOTNET_CLI_HOME", os.getenv("HOME") .. "/.local/share/dotnet")
 hl.env("GRADLE_USER_HOME", os.getenv("HOME") .. "/.local/share/gradle")
 hl.env("NPM_CONFIG_USERCONFIG", os.getenv("HOME") .. "/.config/npm/npmrc")
@@ -29,6 +33,7 @@ hl.env("NPM_CONFIG_INIT_MODULE", os.getenv("HOME") .. "/.config/npm/config/npm-i
 hl.env("NPM_CONFIG_CACHE", os.getenv("HOME") .. "/.cache/npm")
 hl.env("NPM_CONFIG_TMP", os.getenv("HOME") .. "/.local/share/npm")
 hl.env("NUGET_PACKAGES", os.getenv("HOME") .. "/.cache/NuGetPackages")
+hl.env("WGETRC", os.getenv("HOME") .. "/.config/wget/wgetrc")
 hl.env("WINEPREFIX", os.getenv("HOME") .. "/.local/share/wine")
 
 -- Terminal
