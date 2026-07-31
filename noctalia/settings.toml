@@ -1,4 +1,4 @@
-config_version = 8
+config_version = 10
 
 [bar]
 order = [ "default", "sideBar", "sideBar2" ]
@@ -139,13 +139,7 @@ panel_open_near_click = true
 panel_placement = "attached"
 
 [plugins]
-enabled = [
-    "noctalia/screen_recorder",
-    "oldirtty/color_picker",
-    "nightwatch75/todo",
-    "h465855hgg/lyrics",
-    "thepunkoff/pomodoro"
-]
+enabled = [ "noctalia/screen_recorder", "oldirtty/color_picker", "nightwatch75/todo", "thepunkoff/pomodoro" ]
 
 [shell]
 app_icon_color = "primary"
@@ -278,16 +272,16 @@ transition = [ "disc" ]
 transition_on_startup = true
 
     [wallpaper.default]
-    path = "/home/firmino/Imagens/Wallpapers/abstract_43.png"
+    path = "/home/firmino/Imagens/Wallpapers/abstract_6.jpg"
 
     [wallpaper.last]
-    path = "/home/firmino/Imagens/Wallpapers/abstract_43.png"
+    path = "/home/firmino/Imagens/Wallpapers/abstract_6.jpg"
 
     [wallpaper.monitors.HDMI-A-1]
     path = "/home/firmino/Imagens/Wallpapers/linux_4.jpg"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/firmino/Imagens/Wallpapers/abstract_43.png"
+    path = "/home/firmino/Imagens/Wallpapers/abstract_6.jpg"
 
     [[wallpaper.favorite]]
     palette_source = "wallpaper"
@@ -310,6 +304,8 @@ show_label = false
 
 [widget.cpu]
 show_label = false
+show_value = false
+visualization = "gauge"
 
 [widget.input_volume]
 show_label = false
@@ -322,6 +318,7 @@ hide_when_no_unread = true
 
 [widget.ram]
 show_label = false
+show_value = false
 
 [widget.recorder]
 type = "noctalia/screen_recorder:recorder"
@@ -335,7 +332,7 @@ type = "spacer"
 
 [widget.sysmon]
 glyph = "gpu-usage"
-show_label = false
+show_value = false
 stat = "gpu_usage"
 
 [widget.taskbar]
@@ -351,6 +348,7 @@ workspace_label_placement = "inside"
 
 [widget.temp]
 show_label = false
+show_value = false
 
 [widget.todo_2]
 type = "nightwatch75/todo:todo"
@@ -382,3 +380,4 @@ anchor = true
 display = "none"
 occupied_color = "tertiary"
 pill_scale = 0.80000000000000004
+style = "regular"
