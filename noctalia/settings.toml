@@ -1,4 +1,4 @@
-config_version = 10
+config_version = 11
 
 [bar]
 order = [ "default", "sideBar", "sideBar2" ]
@@ -120,6 +120,9 @@ widget_order = [ "lockscreen-login-box@eDP-1", "lockscreen-login-box@HDMI-A-1" ]
         show_keyboard_layout = true
         show_login_button = true
 
+[notification]
+layer = "overlay"
+
 [osd]
 background_opacity = 0.4999999888241291
 border = false
@@ -139,12 +142,19 @@ panel_open_near_click = true
 panel_placement = "attached"
 
 [plugins]
-enabled = [ "noctalia/screen_recorder", "oldirtty/color_picker", "nightwatch75/todo", "thepunkoff/pomodoro" ]
+enabled = [
+    "noctalia/screen_recorder",
+    "oldirtty/color_picker",
+    "nightwatch75/todo",
+    "thepunkoff/pomodoro",
+    "cleboost/ssh-launcher"
+]
 
 [shell]
 app_icon_color = "primary"
 app_icon_colorize = true
 button_borders = false
+card_borders = false
 clipboard_history_max_entries = 800
 corner_radius_scale = 2.0
 font_family = "Google Sans Display Medium"
@@ -168,6 +178,7 @@ popup_borders = false
 
     [shell.screenshot]
     confirm_region = true
+    remember_last_region = true
 
     [[shell.session.actions]]
     action = "lock"
@@ -213,6 +224,7 @@ gpu_poll_seconds = 1
 [theme]
 builtin = "Ayu"
 mode = "dark"
+pure_black_dark = false
 source = "wallpaper"
 wallpaper_scheme = "m3-content"
 
@@ -296,14 +308,16 @@ width = 192
 [widget.battery]
 display_mode = "graphic"
 hide_when_full = true
-hide_when_plugged = true
+label_content = "percent"
 show_label = false
 
 [widget.brightness]
 show_label = false
 
+[widget.clock]
+format = "{:%H:%M}"
+
 [widget.cpu]
-show_label = false
 show_value = false
 visualization = "gauge"
 
@@ -317,7 +331,6 @@ show_label = false
 hide_when_no_unread = true
 
 [widget.ram]
-show_label = false
 show_value = false
 
 [widget.recorder]
@@ -336,18 +349,18 @@ show_value = false
 stat = "gpu_usage"
 
 [widget.taskbar]
+active_indicator_color = "hover"
 group_by_workspace = true
-hide_empty_workspaces = true
-inactive_opacity = 0.80000000000000004
-minimal = true
+group_single_icon_per_app = true
+inactive_opacity = 0.59999999999999998
 occupied_color = "outline"
 scale = 0.80000000000000004
 show_active_indicator = false
 show_workspace_label = false
-workspace_label_placement = "inside"
+workspace_group_content = "icons"
+workspace_label_placement = "centered"
 
 [widget.temp]
-show_label = false
 show_value = false
 
 [widget.todo_2]
@@ -376,8 +389,12 @@ type = "thepunkoff/pomodoro:widget"
 type = "oldirtty/color_picker:widget"
 
 [widget.workspaces]
+active_pill_size = 2.0
 anchor = true
-display = "none"
-occupied_color = "tertiary"
-pill_scale = 0.80000000000000004
+empty_color = "on_primary"
+focused_color = "primary"
+inactive_pill_size = 1.0
+occupied_color = "on_hover"
+pill_scale = 0.90000000000000002
+show_labels = false
 style = "regular"
