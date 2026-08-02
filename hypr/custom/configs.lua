@@ -11,8 +11,6 @@ hl.config({
 
   input      = {
     kb_layout = "br",
-    -- kb_layout = "us",
-    -- kb_variant = "altgr-intl",
     numlock_by_default = true,
     repeat_delay = 250,
     repeat_rate = 50,
@@ -49,7 +47,7 @@ hl.config({
     },
 
     shadow = {
-      enabled = true,
+      enabled = false,
       range = 8,
       color = 0x50000000,
     },

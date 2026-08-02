@@ -11,12 +11,12 @@ base16.setup {
   base06 = "{{colors.on_surface.default.hex}}", -- FG Light (Destaque de texto)
   base07 = "{{colors.on_background.default.hex | lighten: 5}}", -- FG Lighter (Quase branco/rosa muito claro)
 
-  base08 = "{{colors.terminal_bright_white.default.hex}}", -- WHITE Variables
-  base09 = "{{colors.terminal_normal_red.default.hex}}", -- RED Constants, Int, Bool, Numbers
-  base0A = "{{colors.terminal_normal_yellow.default.hex}}", -- YELLOW Classes, Object Primitives, Search BG
-  base0B = "{{colors.terminal_normal_green.default.hex}}", -- GREEN Strings
-  base0C = "{{colors.terminal_normal_cyan.default.hex}}", -- CYAN Support Chars, Regular Expressions, Escape Char
-  base0D = "{{colors.terminal_normal_blue.default.hex}}", -- BLUE Dinamic Keywords, (Functions, MEthods)
-  base0E = "{{colors.terminal_normal_magenta.default.hex}}", -- MAGENTA Static Keywords, ? : if else for
-  base0F = "{{colors.outline.default.hex | lighten: 5}}", -- GRAY Deprecated, Symbols , . :
+  base08 = "{{colors.primary.default.hex | lighten: 8}}", -- WHITE Variables
+  base09 = "{{colors.primary.default.hex | blend: '#f09898', 0.8}}", -- RED
+  base0A = "{{colors.primary.default.hex | blend: '#f3e198', 0.8}}", -- YELLOW
+  base0B = "{{colors.primary.default.hex | blend: '#a6e3a1', 0.8}}", -- GREEN (Menta/Sálvia pastel)
+  base0C = "{{colors.primary.default.hex | blend: '#74c7ec', 0.8}}", -- CYAN (Azul turquesa pastel)
+  base0D = "{{colors.primary.default.hex | blend: '#5140fa', 0.8}}", -- BLUE
+  base0E = "{{colors.primary.default.hex | blend: '#f5c2e7', 0.8}}", -- MAGENTA
+  base0F = "{{colors.outline.default.hex}}", -- GRAY Deprecated, Symbols , . :
 }

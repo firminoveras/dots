@@ -27,6 +27,9 @@ local function apply_custom_highlights()
     gitdel = { fg = "#A66A70", bg = "#2B2424" },
     gitcha = { fg = "#6F8FAF", bg = "#24282B" },
     gittxt = { fg = "#9F82AC", bg = "#2A252B" },
+    normal = { fg = "#1e1e2e", bg = "#a6e3a1" },
+    visual = { fg = "#1e1e2e", bg = "#cba6f7" },
+    insert = { fg = "#1e1e2e", bg = "#89b4fa" },
   }
 
   vim.api.nvim_set_hl(0, "DiffAdd", { bg = c.gitadd.bg })
@@ -68,6 +71,31 @@ local function apply_custom_highlights()
   vim.api.nvim_set_hl(0, "DiagnosticSignWarn", { fg = c.warn.fg, bg = "none" })
   vim.api.nvim_set_hl(0, "DiagnosticSignInfo", { fg = c.info.fg, bg = "none" })
   vim.api.nvim_set_hl(0, "DiagnosticSignHint", { fg = c.hint.fg, bg = "none" })
+
+------------------------------------------------------------------
+  -- Destaque do Texto Selecionado (Modo Visual)
+  ------------------------------------------------------------------
+  -- Fundo lilás suave transparente/opaco na seleção de texto
+  vim.api.nvim_set_hl(0, "Visual", { bg = "#45375c", fg = "NONE" })
+  vim.api.nvim_set_hl(0, "VisualNOS", { bg = "#45375c" })
+
+  ------------------------------------------------------------------
+  -- Cores da Statusline / Lualine pelos Modos
+  ------------------------------------------------------------------
+  -- Grupos Genéricos / Statusline Nativa
+  vim.api.nvim_set_hl(0, "ModeNormal", c.normal)
+  vim.api.nvim_set_hl(0, "ModeVisual", c.visual)
+  vim.api.nvim_set_hl(0, "ModeInsert", c.insert)
+
+  -- Se você utiliza o Lualine com suporte a base16:
+  vim.api.nvim_set_hl(0, "LualineNormal", c.normal)
+  vim.api.nvim_set_hl(0, "LualineVisual", c.visual)
+  vim.api.nvim_set_hl(0, "LualineInsert", c.insert)
+
+  -- Cor do cursor quando em cada modo (se o terminal suportar guicursor)
+  vim.api.nvim_set_hl(0, "Cursor", { fg = colors.base00, bg = c.normal.bg })
+
+
 end
 
 local group = vim.api.nvim_create_augroup("CustomBase16Highlights", { clear = true })
@@ -78,3 +106,13 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 })
 
 apply_custom_highlights()
+
+local uv = vim.uv or vim.loop
+local signal = uv.new_signal()
+if not signal then return end
+
+signal:start("sigusr1", vim.schedule_wrap(function()
+  package.loaded['plugins.colors'] = nil
+  require('plugins.colors')
+  apply_custom_highlights()
+end))

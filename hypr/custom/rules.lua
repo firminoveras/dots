@@ -16,15 +16,9 @@ hl.window_rule({
 })
 
 hl.window_rule({
-  name = "border_alone",
-  match = { float = 0, workspace = "w[tv1]" },
-  border_size = 0,
-})
-
-hl.window_rule({
   name = "float_shadow",
   match = { float = 1 },
-  border_size = 0,
+  border_size = 2,
 })
 
 hl.layer_rule({
@@ -36,7 +30,6 @@ hl.layer_rule({
   blur = true,
   blur_popups = true,
 })
-
 
 hl.layer_rule({
   name = "wl-kbptr",

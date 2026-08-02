@@ -44,6 +44,7 @@ yazi/theme.toml
 
 !noctalia/
 !noctalia/**
+noctalia/palettes/focus.json
 
 !btop/
 !btop/**

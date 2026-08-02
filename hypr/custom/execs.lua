@@ -13,12 +13,6 @@ hl.on("hyprland.start", function()
   -- Noctalia
   hl.exec_cmd("noctalia")
 
-  -- Hyprpm
-  hl.exec_cmd("sleep 1 && hyprpm reload")
-
-  -- Kando
-  hl.exec_cmd("kando")
-
   -- UDiskie
   hl.exec_cmd("udiskie &")
 
