@@ -1,22 +1,17 @@
 [[plugin.deps]]
-use = "stelcodes/bunny"
-rev = "71b14a3"
-hash = "18a2829738214fe9bca99a2fef19113d"
-
-[[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "8cd50c6"
-hash = "7b625412411be411153886894d9acaf"
+rev = "58c4f4e"
+hash = "f281261ff04ad7ec867c3f802a50835f"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:git"
-rev = "8cd50c6"
-hash = "88e56a64b7ce7c4314427452343fef17"
+rev = "58c4f4e"
+hash = "5bb0bfab901d3601c370eafdd66edd31"
 
 [[plugin.deps]]
 use = "boydaihungst/gvfs"
-rev = "3abc0a2"
-hash = "eed89e75671723c8f9390a2862af0e4e"
+rev = "c92953c"
+hash = "d1e8d33ed36d339d5588f036dc3a9204"
 
 [flavor]
 deps = []

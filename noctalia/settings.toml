@@ -1,18 +1,21 @@
-config_version = 11
+config_version = 14
+
+[audio]
+enable_overdrive = true
 
 [bar]
 order = [ "default", "sideBar", "sideBar2", "barFocus" ]
 
     [bar.barFocus]
-    background_opacity = 0.0
+    background_opacity = 0.99999997764825821
     capsule = false
     capsule_thickness = 0.99999998137354851
-    center = [ "clock", "focus_battery", "focus_network", "focus_bluetooth", "focus_volume", "focus_brightness" ]
+    center = [ "focus_weather", "clock", "bar" ]
     color = "primary"
     concave_edge_corners = false
     contact_shadow = false
     enabled = true
-    end = [ "focus_session" ]
+    end = [ "toggle_2", "focus_battery", "widget_2" ]
     font_family = "MonoLisa Nerd Font"
     font_weight = 900
     hover_highlight = false
@@ -20,18 +23,19 @@ order = [ "default", "sideBar", "sideBar2", "barFocus" ]
     layer = "top"
     margin_ends = 0
     panel_overlap = 1
+    position = "top"
     radius = 0
     reserve_space = true
     scale = 0.85000000521540642
     shadow = false
-    start = [ "focus_workspace", "focus_media" ]
+    start = [ "focus_workspace", "active_window" ]
     thickness = 29
-    widget_spacing = 12
+    widget_spacing = 26
 
     [bar.default]
     background_opacity = 0.4999999888241291
     center = [ "audio_visualizer", "clock", "workspaces", "weather", "audio_visualizer" ]
-    enabled = true
+    enabled = false
     end = [ "battery", "group:g1", "notifications", "session", "space_end" ]
     font_family = "Google Sans Display"
     margin_edge = 6
@@ -72,7 +76,7 @@ order = [ "default", "sideBar", "sideBar2", "barFocus" ]
     [bar.sideBar2]
     auto_hide = true
     background_opacity = 0.4999999888241291
-    center = [ "widget_3", "widget_4", "todo_2", "screenshot", "recorder_3" ]
+    center = [ "widget_3", "screenshot", "recorder_3", "widget_4" ]
     enabled = true
     end = []
     layer = "overlay"
@@ -97,7 +101,7 @@ enabled = true
 enabled = false
 
 [hooks]
-wallpaper_changed = "/home/firmino/.config/noctalia/scripts/apply_colors.sh \"$NOCTALIA_WALLPAPER_PATH\""
+wallpaper_changed = "~/.config/noctalia/scripts/apply_colors.sh \"$NOCTALIA_WALLPAPER_PATH\""
 
 [location]
 address = "Água Branca, PB"
@@ -113,11 +117,13 @@ widget_order = [ "lockscreen-login-box@eDP-1", "lockscreen-login-box@HDMI-A-1" ]
     visible = true
 
     [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1"]
-    box_height = 70.0
-    box_width = 400.0
+    box_height = 196.0
+    box_width = 720.0
     cx = 1280.0
     cy = 961.0
     output = "HDMI-A-1"
+    placement_height = 0.0
+    placement_width = 0.0
     rotation = 0.0
     type = "login_box"
 
@@ -125,18 +131,26 @@ widget_order = [ "lockscreen-login-box@eDP-1", "lockscreen-login-box@HDMI-A-1" ]
         background_color = "surface_variant"
         background_opacity = 0.88
         background_radius = 12.0
+        center_password_text = false
         input_opacity = 1.0
         input_radius = 6.0
+        layout = "regular"
         show_caps_lock = true
         show_keyboard_layout = true
         show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
 
     [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
-    box_height = 70.0
-    box_width = 400.0
+    box_height = 196.0
+    box_width = 720.0
     cx = 960.0
     cy = 961.0
     output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
     rotation = 0.0
     type = "login_box"
 
@@ -144,11 +158,17 @@ widget_order = [ "lockscreen-login-box@eDP-1", "lockscreen-login-box@HDMI-A-1" ]
         background_color = "surface_variant"
         background_opacity = 0.88
         background_radius = 12.0
+        center_password_text = false
         input_opacity = 1.0
         input_radius = 6.0
+        layout = "regular"
         show_caps_lock = true
         show_keyboard_layout = true
         show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
 
 [notification]
 border = false
@@ -165,6 +185,12 @@ scale = 0.80000000447034836
     [osd.kinds]
     media = false
 
+[plugin_settings."alexander/screen-toolkit"]
+selected-ocr-lang = "pt"
+
+[plugin_settings."baizhu/paged-todo"]
+export_path = "~/Documents/Todos/"
+
 [plugin_settings."nightwatch75/todo"]
 todo_folder = "~/Documentos/Todo"
 
@@ -172,14 +198,29 @@ todo_folder = "~/Documentos/Todo"
 panel_open_near_click = true
 panel_placement = "attached"
 
+[plugin_settings."yuki/lunar-workspaces"]
+compositor = "hyprland"
+
 [plugins]
 enabled = [
     "noctalia/screen_recorder",
-    "oldirtty/color_picker",
-    "nightwatch75/todo",
     "thepunkoff/pomodoro",
-    "cleboost/ssh-launcher"
+    "alexander/screen-toolkit",
+    "weinguyen/procmon",
+    "baizhu/paged-todo",
+    "baizhu/input-echo-bar",
+    "tordex/processes"
 ]
+
+    [[plugins.source]]
+    kind = "git"
+    location = "https://github.com/noctalia-dev/official-plugins"
+    name = "official"
+
+    [[plugins.source]]
+    kind = "git"
+    location = "https://github.com/noctalia-dev/community-plugins"
+    name = "community"
 
 [shell]
 app_icon_color = "primary"
@@ -190,10 +231,12 @@ clipboard_history_max_entries = 800
 corner_radius_scale = 2.0
 font_family = "Google Sans Display Medium"
 input_borders = false
-panel_anchor_bar = "default"
+panel_anchor_bar = "barFocus"
 password_style = "random"
 polkit_agent = true
 popup_borders = false
+popup_shadows = false
+settings_show_advanced = true
 
     [shell.launcher.providers.windows]
     global = true
@@ -207,12 +250,14 @@ popup_borders = false
     open_near_click_control_center = true
     open_near_click_wallpaper = true
     polkit_placement = "attached"
-    transparency_mode = "glass"
+    shadow = false
+    transparency_mode = "solid"
 
     [shell.screen_corners]
     enabled = true
 
     [shell.screenshot]
+    annotate = true
     confirm_region = true
     remember_last_region = true
 
@@ -251,6 +296,9 @@ popup_borders = false
     shortcut = "s"
     variant = "destructive"
 
+    [shell.window_switcher]
+    mru = false
+
 [system.monitor]
 cpu_poll_seconds = 1
 cpu_temp_activity_threshold = 80
@@ -263,8 +311,8 @@ community_palette = "Macaron"
 custom_palette = "focus"
 mode = "dark"
 pure_black_dark = false
-source = "wallpaper"
-wallpaper_scheme = "faithful"
+source = "custom"
+wallpaper_scheme = "m3-content"
 
     [theme.templates]
     builtin_ids = [ "gtk3", "gtk4", "kcolorscheme", "qt" ]
@@ -322,16 +370,16 @@ transition = [ "disc" ]
 transition_on_startup = true
 
     [wallpaper.default]
-    path = "/home/firmino/Imagens/Wallpapers/radium/a_group_of_colorful_ghosts.png"
+    path = "/home/firmino/Imagens/Wallpapers/a_screenshot_of_a_video_game_3.png"
 
     [wallpaper.last]
-    path = "/home/firmino/Imagens/Wallpapers/radium/a_group_of_colorful_ghosts.png"
+    path = "/home/firmino/Imagens/Wallpapers/a_screenshot_of_a_video_game_3.png"
 
     [wallpaper.monitors.HDMI-A-1]
     path = "/home/firmino/Imagens/Wallpapers/linux_4.jpg"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/firmino/Imagens/Wallpapers/radium/a_group_of_colorful_ghosts.png"
+    path = "/home/firmino/Imagens/Wallpapers/a_screenshot_of_a_video_game_3.png"
 
     [[wallpaper.favorite]]
     palette_source = "wallpaper"
@@ -339,9 +387,24 @@ transition_on_startup = true
     theme_mode = "dark"
     wallpaper_scheme = "m3-content"
 
+    [[wallpaper.favorite]]
+    path = "/home/firmino/Imagens/Wallpapers/a_skeleton_with_a_skull_and_arms.jpg"
+    theme_mode = "auto"
+
+[widget.active_window]
+display = "text_only"
+max_length = 626
+min_length = 55
+title_scroll = "on_hover"
+
 [widget.audio_visualizer]
 bands = 64
 width = 192
+
+[widget.bar]
+color = "primary"
+icon_color = "primary"
+type = "baizhu/paged-todo:bar"
 
 [widget.battery]
 display_mode = "graphic"
@@ -353,6 +416,7 @@ show_label = false
 show_label = false
 
 [widget.clock]
+anchor = true
 format = "{:%H:%M}"
 
 [widget.cpu]
@@ -360,40 +424,20 @@ show_value = false
 visualization = "gauge"
 
 [widget.focus_battery]
-display_mode = "graphic"
+display_mode = "none"
+hide_when_full = true
 type = "battery"
 
-[widget.focus_bluetooth]
-show_label = true
-type = "bluetooth"
-
-[widget.focus_brightness]
-type = "brightness"
-
-[widget.focus_media]
-hide_album_art = true
-hide_artist = true
-hide_when_no_media = true
-title_scroll = "on_hover"
-type = "media"
-
-[widget.focus_network]
-type = "network"
-
-[widget.focus_session]
-glyph = ""
-label = "Sessão"
-type = "custom_button"
-
-[widget.focus_volume]
-device = "output"
-type = "volume"
+[widget.focus_weather]
+type = "weather"
 
 [widget.focus_workspace]
 color = "surface_variant"
-empty_color = "surface_variant"
+empty_color = "surface"
+focused_color = "primary"
+icon_color = "tertiary"
 label_source = "id"
-occupied_color = "tertiary"
+occupied_color = "outline"
 style = "minimal"
 type = "workspaces"
 
@@ -442,8 +486,8 @@ workspace_label_placement = "centered"
 [widget.temp]
 show_value = false
 
-[widget.todo_2]
-type = "nightwatch75/todo:todo"
+[widget.toggle_2]
+type = "decksters-lab/palette-creator:toggle"
 
 [widget.volume]
 show_label = false
@@ -462,11 +506,16 @@ type = "custom_button"
 [widget.weather]
 show_condition = false
 
+[widget.widget_2]
+font_family = "MonoLisa Nerd Font"
+font_weight = 900
+type = "weinguyen/procmon:widget"
+
 [widget.widget_3]
 type = "thepunkoff/pomodoro:widget"
 
 [widget.widget_4]
-type = "oldirtty/color_picker:widget"
+type = "alexander/screen-toolkit:widget"
 
 [widget.workspaces]
 active_pill_size = 2.0

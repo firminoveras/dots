@@ -1,8 +1,8 @@
 hl.config({
   general    = {
-    gaps_in           = 4,
-    gaps_out          = 6,
-    border_size       = 2,
+    gaps_in           = 0,
+    gaps_out          = 0,
+    border_size       = 0,
     resize_on_border  = false,
     no_focus_fallback = true,
     allow_tearing     = true,
@@ -27,7 +27,7 @@ hl.config({
   },
 
   decoration = {
-    rounding_power = 2,
+    rounding_power = 0,
     rounding = 12,
 
     blur = {

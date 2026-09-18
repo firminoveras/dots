@@ -16,6 +16,16 @@ hl.window_rule({
 })
 
 hl.window_rule({
+  name = "floating-fzf",
+  match = { class = "floating-fzf" },
+  float = true,
+  center = true,
+  pin = true,
+  stay_focused = true,
+  size = {200,200},
+})
+
+hl.window_rule({
   name = "float_shadow",
   match = { float = 1 },
   border_size = 2,

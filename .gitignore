@@ -41,10 +41,11 @@ nvim/lua/plugins/colors.lua
 !yazi/
 !yazi/**
 yazi/theme.toml
+yazi/plugins/**
 
 !noctalia/
 !noctalia/**
-noctalia/palettes/focus.json
+noctalia/palettes/**
 
 !btop/
 !btop/**

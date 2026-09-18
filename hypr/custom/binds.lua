@@ -5,6 +5,7 @@ hl.bind("SHIFT + CTRL + ALT + SUPER + SPACE", hl.dsp.exec_cmd("noctalia msg pane
 hl.bind("CTRL + ALT + Delete", hl.dsp.exec_cmd("noctalia msg panel-toggle session"))
 hl.bind("ALT + F4", hl.dsp.exec_cmd("noctalia msg panel-toggle session"))
 hl.bind("SUPER + V", hl.dsp.exec_cmd("noctalia msg panel-toggle clipboard"))
+hl.bind("PRINT", hl.dsp.exec_cmd("noctalia msg screenshot-region"))
 
 hl.bind("SUPER + T", hl.dsp.exec_cmd("kitty"))
 hl.bind("SUPER + I", hl.dsp.exec_cmd('google-chrome-stable --ozone-platform-wayland --profile-directory="Default"'))
@@ -99,8 +100,8 @@ hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = tr
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
 
-hl.bind("print", function() hl.plugin.hyprcapture.open() end)
-hl.bind("SUPER + print", function() hl.plugin.hyprcapture.open("window") end)
+hl.bind("XF86Presentation", hl.dsp.exec_cmd("handy --toggle-transcription"))
+hl.bind("XF86Presentation", hl.dsp.exec_cmd("handy --toggle-transcription"), {release = true})
 
 hl.gesture({
   fingers = 3,

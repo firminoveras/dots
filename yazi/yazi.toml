@@ -1,11 +1,11 @@
 [[plugin.prepend_fetchers]]
-url   = "*"
-run   = "git"
+url = "*"
+run = "git"
 group = "git"
 
 [[plugin.prepend_fetchers]]
-url   = "*/"
-run   = "git"
+url = "*/"
+run = "git"
 group = "git"
 
 [mgr]
@@ -15,18 +15,19 @@ sort_dir_first = true
 show_hidden = true
 
 [opener]
-edit    = [ { run = 'nvim "$@"', block = true, for = "unix" } ]
-open    = [ { run = 'xdg-open "$@"', desc = "Abrir com app padrão" } ]
-play    = [ { run = 'vlc "$@"', orphan = true, for = "unix" } ]
-pinta   = [ { run = 'pinta "$@"', orphan = true, desc = "Editar com Pinta" } ]
-extract = [ { run = '7z x "$@"', block = true, desc = "Extrair aqui" } ]
-zip     = [ { run = 'for dir in "$@"; do if [ -d "$dir" ]; then (cd "$(dirname "$dir")" && zip -r "$(basename "$dir")".zip "$(basename "$dir")"); fi; done', block = true, desc = "Zipar com 7z" } ]
+edit = [ { run = 'nvim %s', block = true, desc = "Neovim", for = "unix" } ]
+edit-win = [ { run = 'kitty -- nvim %s', orphan = true, desc = "Neovim (Nova Janela)", for = "unix" } ]
+open = [ { run = 'xdg-open %s1', desc = "Abrir com XDG" } ]
+play = [ { run = 'vlc %s', orphan = true, for = "unix" } ]
+pinta = [ { run = 'pinta %s1', orphan = true, desc = "Editar com Pinta" } ]
+extract = [ { run = '7z x %s1', block = true, desc = "Extrair aqui" } ]
+zip = [ { run = 'for dir in %s; do if [ -d "$dir" ]; then (cd "$(dirname "$dir")" && zip -r "$(basename "$dir")".zip "$(basename "$dir")"); fi; done', block = true, desc = "Zipar com 7z" } ]
 
 [open]
 rules = [
-	{ url = "*/", use = [ "edit", "open", "zip" ] },
+	{ url = "*/", use = [ "edit", "edit-win", "open", "zip" ] },
 
-	{ mime = "text/*",  use = [ "edit", "open" ] },
+	{ mime = "text/*",  use = [ "edit", "edit-win", "open" ] },
 	{ mime = "image/*", use = [ "open", "pinta" ] },
 	{ mime = "video/*", use = [ "play", "open" ] },
 	{ mime = "audio/*", use = [ "play", "open" ] },

@@ -30,8 +30,8 @@ desc = "Open interactive"
 
 [[mgr.prepend_keymap]]
 on = "<C-Enter>"
-run = 'shell "kitty -e nvim $0" --orphan'
-desc = "Open in other shell"
+run = 'open --interactive'
+desc = "Open interactive"
 
 [[mgr.prepend_keymap]]
 on = "<Enter>"
