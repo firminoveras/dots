@@ -36,8 +36,8 @@ hl.config({
 local highlightRule = hl.window_rule({
   name = "super_highlight",
   enabled = false,
-  match = { focus = true },
-  border_color = primary,
+  match = { focus = false },
+  opacity = 0.7,
 })
 
 hl.bind("Super_L", function() highlightRule:set_enabled(true) end, { non_consuming = true, transparent = true })

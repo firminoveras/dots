@@ -1,4 +1,4 @@
-config_version = 14
+config_version = 15
 
 [audio]
 enable_overdrive = true
@@ -9,13 +9,14 @@ order = [ "default", "sideBar", "sideBar2", "barFocus" ]
     [bar.barFocus]
     background_opacity = 0.99999997764825821
     capsule = false
+    capsule_group = []
     capsule_thickness = 0.99999998137354851
     center = [ "focus_weather", "clock", "bar" ]
     color = "primary"
     concave_edge_corners = false
     contact_shadow = false
-    enabled = true
-    end = [ "toggle_2", "focus_battery", "widget_2" ]
+    enabled = false
+    end = [ "focus_battery", "widget_2" ]
     font_family = "MonoLisa Nerd Font"
     font_weight = 900
     hover_highlight = false
@@ -33,16 +34,19 @@ order = [ "default", "sideBar", "sideBar2", "barFocus" ]
     widget_spacing = 26
 
     [bar.default]
-    background_opacity = 0.4999999888241291
+    background_opacity = 0.99999997764825821
     center = [ "audio_visualizer", "clock", "workspaces", "weather", "audio_visualizer" ]
-    enabled = false
+    enabled = true
     end = [ "battery", "group:g1", "notifications", "session", "space_end" ]
     font_family = "Google Sans Display"
+    layer = "top"
     margin_edge = 6
     margin_ends = 6
     padding = 4
     radius = 24
+    reserve_space = true
     shadow = false
+    smart_auto_hide = false
     start = [ "taskbar" ]
     thickness = 28
     widget_spacing = 12
@@ -97,11 +101,14 @@ enabled = true
     name = "Firmino"
     type = "google"
 
+    [calendar.reminders]
+    enabled = false
+
 [desktop_widgets]
 enabled = false
 
 [hooks]
-wallpaper_changed = "~/.config/noctalia/scripts/apply_colors.sh \"$NOCTALIA_WALLPAPER_PATH\""
+wallpaper_changed = ""
 
 [location]
 address = "Água Branca, PB"
@@ -198,6 +205,9 @@ todo_folder = "~/Documentos/Todo"
 panel_open_near_click = true
 panel_placement = "attached"
 
+[plugin_settings."weinguyen/procmon"]
+refresh_interval = 1940
+
 [plugin_settings."yuki/lunar-workspaces"]
 compositor = "hyprland"
 
@@ -206,10 +216,8 @@ enabled = [
     "noctalia/screen_recorder",
     "thepunkoff/pomodoro",
     "alexander/screen-toolkit",
-    "weinguyen/procmon",
     "baizhu/paged-todo",
-    "baizhu/input-echo-bar",
-    "tordex/processes"
+    "weinguyen/procmon"
 ]
 
     [[plugins.source]]
@@ -231,7 +239,7 @@ clipboard_history_max_entries = 800
 corner_radius_scale = 2.0
 font_family = "Google Sans Display Medium"
 input_borders = false
-panel_anchor_bar = "barFocus"
+panel_anchor_bar = "default"
 password_style = "random"
 polkit_agent = true
 popup_borders = false
@@ -250,8 +258,8 @@ settings_show_advanced = true
     open_near_click_control_center = true
     open_near_click_wallpaper = true
     polkit_placement = "attached"
-    shadow = false
-    transparency_mode = "solid"
+    shadow = true
+    transparency_mode = "glass"
 
     [shell.screen_corners]
     enabled = true
@@ -297,7 +305,7 @@ settings_show_advanced = true
     variant = "destructive"
 
     [shell.window_switcher]
-    mru = false
+    mru = true
 
 [system.monitor]
 cpu_poll_seconds = 1
@@ -311,8 +319,8 @@ community_palette = "Macaron"
 custom_palette = "focus"
 mode = "dark"
 pure_black_dark = false
-source = "custom"
-wallpaper_scheme = "m3-content"
+source = "wallpaper"
+wallpaper_scheme = "soft"
 
     [theme.templates]
     builtin_ids = [ "gtk3", "gtk4", "kcolorscheme", "qt" ]
@@ -370,22 +378,22 @@ transition = [ "disc" ]
 transition_on_startup = true
 
     [wallpaper.default]
-    path = "/home/firmino/Imagens/Wallpapers/a_screenshot_of_a_video_game_3.png"
+    path = "/home/firmino/Imagens/Wallpapers/a_person_standing_on_a_rocky_cliff_by_the_ocean.png"
 
     [wallpaper.last]
-    path = "/home/firmino/Imagens/Wallpapers/a_screenshot_of_a_video_game_3.png"
+    path = "/home/firmino/Imagens/Wallpapers/a_person_standing_on_a_rocky_cliff_by_the_ocean.png"
 
     [wallpaper.monitors.HDMI-A-1]
     path = "/home/firmino/Imagens/Wallpapers/linux_4.jpg"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/firmino/Imagens/Wallpapers/a_screenshot_of_a_video_game_3.png"
+    path = "/home/firmino/Imagens/Wallpapers/a_person_standing_on_a_rocky_cliff_by_the_ocean.png"
 
     [[wallpaper.favorite]]
     palette_source = "wallpaper"
     path = "/home/firmino/Imagens/Wallpapers/linux_4.jpg"
     theme_mode = "dark"
-    wallpaper_scheme = "m3-content"
+    wallpaper_scheme = "faithful"
 
     [[wallpaper.favorite]]
     path = "/home/firmino/Imagens/Wallpapers/a_skeleton_with_a_skull_and_arms.jpg"
@@ -399,6 +407,7 @@ title_scroll = "on_hover"
 
 [widget.audio_visualizer]
 bands = 64
+enabled = true
 width = 192
 
 [widget.bar]
@@ -416,7 +425,6 @@ show_label = false
 show_label = false
 
 [widget.clock]
-anchor = true
 format = "{:%H:%M}"
 
 [widget.cpu]
@@ -425,10 +433,12 @@ visualization = "gauge"
 
 [widget.focus_battery]
 display_mode = "none"
+enabled = true
 hide_when_full = true
 type = "battery"
 
 [widget.focus_weather]
+show_condition = false
 type = "weather"
 
 [widget.focus_workspace]
@@ -459,6 +469,9 @@ type = "noctalia/screen_recorder:recorder"
 [widget.recorder_3]
 type = "noctalia/screen_recorder:recorder"
 
+[widget.session]
+enabled = true
+
 [widget.space_end]
 length = 4
 type = "spacer"
@@ -475,19 +488,17 @@ empty_color = "outline"
 font_family = "Pixelon"
 font_weight = 400
 group_by_workspace = true
-group_single_icon_per_app = true
 inactive_opacity = 0.59999999999999998
+minimal = true
 occupied_color = "secondary"
 scale = 0.90000000000000002
 show_active_indicator = false
+show_workspace_label = false
 workspace_group_content = "icons"
-workspace_label_placement = "centered"
+workspace_label_placement = "inside"
 
 [widget.temp]
 show_value = false
-
-[widget.toggle_2]
-type = "decksters-lab/palette-creator:toggle"
 
 [widget.volume]
 show_label = false
@@ -507,9 +518,13 @@ type = "custom_button"
 show_condition = false
 
 [widget.widget_2]
+enabled = true
 font_family = "MonoLisa Nerd Font"
 font_weight = 900
 type = "weinguyen/procmon:widget"
+
+    [widget.widget_2.actions]
+    right = "panel-toggle panel-toggle tordex/processes:panel cpu"
 
 [widget.widget_3]
 type = "thepunkoff/pomodoro:widget"
@@ -520,9 +535,11 @@ type = "alexander/screen-toolkit:widget"
 [widget.workspaces]
 active_pill_size = 2.0
 anchor = true
-empty_color = "on_primary"
+empty_color = "outline"
 focused_color = "primary"
 inactive_pill_size = 1.0
+label_source = "id"
+labels_only_when_occupied = true
 occupied_color = "secondary"
 pill_scale = 0.90000000000000002
 show_labels = false

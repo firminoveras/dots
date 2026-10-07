@@ -6,6 +6,8 @@ hl.bind("CTRL + ALT + Delete", hl.dsp.exec_cmd("noctalia msg panel-toggle sessio
 hl.bind("ALT + F4", hl.dsp.exec_cmd("noctalia msg panel-toggle session"))
 hl.bind("SUPER + V", hl.dsp.exec_cmd("noctalia msg panel-toggle clipboard"))
 hl.bind("PRINT", hl.dsp.exec_cmd("noctalia msg screenshot-region"))
+hl.bind("SUPER + CTRL + R", hl.dsp.exec_cmd("sh -c 'killall noctalia; sleep 1; noctalia'"))
+hl.bind("ALT + TAB", hl.dsp.exec_cmd("noctalia msg window-switcher"))
 
 hl.bind("SUPER + T", hl.dsp.exec_cmd("kitty"))
 hl.bind("SUPER + I", hl.dsp.exec_cmd('google-chrome-stable --ozone-platform-wayland --profile-directory="Default"'))

@@ -16,4 +16,9 @@ hl.on("hyprland.start", function()
   -- UDiskie
   hl.exec_cmd("udiskie &")
 
+  -- Reload plugins
+  if os.getenv("HYPR_NO_PLUGINS") ~= "1" then
+    hl.exec_cmd("hyprpm reload -n")
+  end
+
 end)

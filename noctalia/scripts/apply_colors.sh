@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# ~/.config/noctalia/scripts/apply_colors.sh "$NOCTALIA_WALLPAPER_PATH"
 
 noctalia msg panel-close wallpaper
 

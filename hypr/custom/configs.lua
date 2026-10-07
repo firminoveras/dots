@@ -1,7 +1,7 @@
 hl.config({
   general    = {
-    gaps_in           = 0,
-    gaps_out          = 0,
+    gaps_in           = 3,
+    gaps_out          = 6,
     border_size       = 0,
     resize_on_border  = false,
     no_focus_fallback = true,
@@ -27,7 +27,7 @@ hl.config({
   },
 
   decoration = {
-    rounding_power = 0,
+    rounding_power = 2,
     rounding = 12,
 
     blur = {
@@ -48,13 +48,18 @@ hl.config({
 
     shadow = {
       enabled = false,
-      range = 8,
-      color = 0x50000000,
+      range = 12,
+      color = "#000000"
     },
 
     glow = {
       enabled = false,
-    }
+    },
+
+    motion_blur = {
+      enabled = true,
+    },
+
   },
 
   dwindle    = {
@@ -85,7 +90,7 @@ hl.config({
     mouse_move_enables_dpms = true,
     key_press_enables_dpms = true,
     animate_manual_resizes = true,
-    animate_mouse_windowdragging = false,
+    animate_mouse_windowdragging = true,
     on_focus_under_fullscreen = 2,
     allow_session_lock_restore = true,
     session_lock_xray = true,
@@ -103,6 +108,7 @@ hl.config({
     zoom_rigid = false,
     zoom_disable_aa = true,
     hotspot_padding = 1,
+    no_warps = true,
   },
 
   gestures   = {
