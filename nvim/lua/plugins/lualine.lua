@@ -120,14 +120,22 @@ require('lualine').setup {
         diagnostics_color = { error = { fg = colors.bg, bg = get_fg("DiagnosticError") } },
       },
       {
-        'lsp_status',
-        symbols = {
-          done = '',
-          separator = '',
-          spinner = { '', '', '', '', '', '', '', '', '', '', }
-        },
+        function()
+          local clients = vim.lsp.get_clients({ bufnr = 0 })
+          if #clients == 0 then return "" end
+          local names = {}
+          for _, c in ipairs(clients) do
+            table.insert(names, c.name)
+          end
+          return " " .. table.concat(names, ", ")
+        end,
+        cond = function()
+          return #vim.lsp.get_clients({ bufnr = 0 }) > 0
+        end,
+      },
+      {
         'filetype',
-      }
+      },
     },
     lualine_z = { '%l:%c', '%p%%/%L' },
   },

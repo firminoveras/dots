@@ -1,3 +1,7 @@
+-- Leader key (deve ser definida antes de qualquer plugin carregar)
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
 -- Visual
 vim.opt.number = true
 vim.opt.relativenumber = false
@@ -26,7 +30,6 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 -- Behavior
-vim.opt.hidden = true
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.updatetime = 250
@@ -38,7 +41,7 @@ vim.opt.completeopt = "menu,menuone,noselect"
 vim.opt.shortmess:append "c"
 
 -- Undodir
-local undodir_path = os.getenv("HOME") .. "/.cache/nvim/undodir"
+local undodir_path = vim.fn.stdpath("state") .. "/undo"
 vim.opt.undofile = true
 vim.opt.undodir = undodir_path
 if vim.fn.isdirectory(undodir_path) == 0 then

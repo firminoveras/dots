@@ -31,6 +31,15 @@ hl.window_rule({
   border_size = 2,
 })
 
+hl.window_rule({
+  name = "bitwarden",
+  match = { title = "(?i).*nngceckbapebfimnlniiiahkandclblb.*" },
+  float = true,
+  center = true,
+  stay_focused = true,
+  pin = true,
+})
+
 hl.layer_rule({
   name = "noctalia",
   match = {

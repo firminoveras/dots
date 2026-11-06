@@ -180,14 +180,3 @@ cmp.setup.cmdline(":", {
     disallow_symbol_nonprefix_matching = false
   },
 })
-
-local ok_lsp, lspconfig = pcall(require, "lspconfig")
-local ok_cmp_lsp, cmp_lsp = pcall(require, "cmp_nvim_lsp")
-if ok_lsp and ok_cmp_lsp then
-  local capabilities = cmp_lsp.default_capabilities()
-  for _, server in ipairs(vim.tbl_keys(lspconfig)) do
-    lspconfig[server].setup({
-      capabilities = capabilities,
-    })
-  end
-end

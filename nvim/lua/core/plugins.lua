@@ -36,6 +36,7 @@ local plugins = {
   -- Fuzzy finder & extensão
   { 'nvim-telescope/telescope.nvim',            name = 'telescope',           requires = { 'nvim-lua/plenary.nvim' } },
   { 'nvim-telescope/telescope-fzf-native.nvim', name = 'telescope-fzf-native' },
+  { 'nvim-telescope/telescope-ui-select.nvim',   name = 'telescope-ui-select' },
 
   -- Treesitter (sintaxe/indent/highlight) + related
   { 'nvim-treesitter/nvim-treesitter',          name = 'nvim-treesitter' },

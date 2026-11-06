@@ -20,7 +20,9 @@ api.nvim_create_autocmd("BufReadPost", {
 })
 
 vim.api.nvim_create_autocmd('LspAttach', {
-  callback = function()
-    vim.lsp.document_color.enable(false)
+  callback = function(args)
+    if vim.lsp.document_color and vim.lsp.document_color.enable then
+      vim.lsp.document_color.enable(false, { bufnr = args.buf })
+    end
   end,
 })

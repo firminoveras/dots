@@ -1,4 +1,5 @@
 require('core.options')
 require('core.plugins')
+require('core.user').setup()
 require('core.autocmd')
 require('core.keymaps')

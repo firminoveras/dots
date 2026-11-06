@@ -1,3 +1,5 @@
+vim.g.scrollbar_v2_notice = false
+
 local ok, scrollbar = pcall(require, "scrollbar")
 if not ok then return end
 

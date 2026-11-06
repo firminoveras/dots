@@ -2,22 +2,7 @@ local ok_mason, mason = pcall(require, "mason")
 if not ok_mason then return end
 
 local ok_mason_lsp, mason_lspconfig = pcall(require, "mason-lspconfig")
-if not ok_mason_lsp then
-  mason.setup {}
-  return
-end
-
-local ok_user_hl, user_hl = pcall(require, "core.user.highlights")
-if not ok_user_hl then return end
-user_hl.setup()
-
-local ok_user_beacon, user_beacon = pcall(require, "core.user.beacon")
-if not ok_user_beacon then return end
-user_beacon.setup()
-
-local ok_user_diag, user_diag = pcall(require, "core.user.diagnostics")
-if not ok_user_diag then return end
-user_diag.setup()
+if not ok_mason_lsp then return end
 
 vim.diagnostic.config {
   underline = true,
@@ -59,28 +44,39 @@ mason.setup {
   },
 }
 
-mason_lspconfig.setup {
-  automatic_installation = true,
-  ensure_installed = {
-    "lua_ls",
-    "pyright",
-    "bashls",
-    "jsonls",
-    "html",
-    "cssls",
-  },
+local servers = {
+  "lua_ls",
+  "pyright",
+  "bashls",
+  "jsonls",
+  "html",
+  "cssls",
 }
 
-vim.lsp.config('lua_ls', {
-  cmd = { 'lua-language-server' },
-  filetypes = { 'lua' },
-  root_markers = { { '.luarc.json', '.luarc.jsonc' }, '.git' },
+mason_lspconfig.setup {
+  automatic_installation = true,
+  ensure_installed = servers,
+}
+
+local ok_cmp_lsp, cmp_lsp = pcall(require, "cmp_nvim_lsp")
+local capabilities = ok_cmp_lsp and cmp_lsp.default_capabilities() or vim.lsp.protocol.make_client_capabilities()
+
+for _, server in ipairs(servers) do
+  vim.lsp.config(server, {
+    capabilities = capabilities,
+  })
+end
+
+vim.lsp.config("lua_ls", {
+  capabilities = capabilities,
   settings = {
     Lua = {
-      workspace = { library = { vim.env.VIMRUNTIME }, checkThirdParty = false },
+      workspace = { checkThirdParty = false },
       runtime = { version = 'LuaJIT' },
       diagnostics = { enable = true, globals = { "vim", "th", "ui" } },
       telemetry = { enable = false },
     }
   }
 })
+
+vim.lsp.enable(servers)
